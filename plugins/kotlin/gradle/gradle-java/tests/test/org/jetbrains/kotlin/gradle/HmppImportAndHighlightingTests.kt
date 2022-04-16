@@ -366,6 +366,20 @@ abstract class HmppImportAndHighlightingTests : MultiplePluginVersionGradleImpor
                     targetPlatform(allNative, js, jvm)
                     moduleDependency("multimod-hmpp.top-mpp.commonMain", DependencyScope.TEST)
                 }
+                module("multimod-hmpp.top-mpp.common") {
+                    targetPlatform(allNative, js, jvm)
+                    moduleDependency("multimod-hmpp.api-jvm.main", DependencyScope.COMPILE)
+                }
+                module("multimod-hmpp.top-mpp.jvmLibrary") {
+                    targetPlatform(allNative, js, jvm)
+                    moduleDependency("multimod-hmpp.top-mpp.commonMain", DependencyScope.COMPILE)
+                }
+                module("multimod-hmpp.top-mpp.jvm") {
+                    targetPlatform(allNative, js, jvm)
+                    moduleDependency("multimod-hmpp.api-jvm.main", DependencyScope.COMPILE)
+                    moduleDependency("multimod-hmpp.top-mpp.common", DependencyScope.COMPILE)
+                    moduleDependency("multimod-hmpp.bottom-mpp.commonMain", DependencyScope.COMPILE)
+                }
                 module("multimod-hmpp.top-mpp.dummyiOSMain") {
                     targetPlatform(iosX64)
                     moduleDependency("multimod-hmpp.top-mpp.commonMain", DependencyScope.COMPILE)
@@ -481,6 +495,14 @@ abstract class HmppImportAndHighlightingTests : MultiplePluginVersionGradleImpor
         @Test
         @PluginTargetVersions(pluginVersion = "1.5.30+")
         fun testKt46625SupportedAndUnsupportedPlatform() {
+            configureByFiles()
+            importProject()
+            checkHighligthingOnAllModules()
+        }
+
+        @Test
+        @PluginTargetVersions(pluginVersion = "1.4.20")
+        fun testKt41218SupportedAndUnsupportedPlatform(){
             configureByFiles()
             importProject()
             checkHighligthingOnAllModules()

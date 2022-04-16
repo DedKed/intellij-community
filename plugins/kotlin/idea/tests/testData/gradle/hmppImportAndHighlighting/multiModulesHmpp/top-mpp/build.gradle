@@ -102,6 +102,21 @@ kotlin {
         commonTest {
             dependencies {}
         }
+        common {
+            dependencies {
+                api project(":api-jvm")
+            }
+        }
+        jvmLibrary{
+            dependsOn commonMain
+        }
+        jvm {
+            dependsOn common
+            dependencies {
+                api project(":api-jvm")
+                api project(":bottom-mpp")
+            }
+        }
 
         // intermediate between commonMain and jsJvm18Main
         kt27816Main {
