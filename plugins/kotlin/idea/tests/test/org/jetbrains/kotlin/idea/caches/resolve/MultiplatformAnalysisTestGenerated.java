@@ -248,10 +248,11 @@ public class MultiplatformAnalysisTestGenerated extends AbstractMultiplatformAna
         runTest("testData/multiplatform/qualifiedReceiver/");
     }
 
-    @TestMetadata("recursiveTypes")
-    public void testRecursiveTypes() throws Exception {
-        runTest("testData/multiplatform/recursiveTypes/");
-    }
+    //Test moved to HMPP E2E
+    //@TestMetadata("recursiveTypes")
+    //public void testRecursiveTypes() throws Exception {
+    //    runTest("testData/multiplatform/recursiveTypes/");
+    //}
 
     @TestMetadata("sealedInheritorsInComplexModuleStructure1")
     public void testSealedInheritorsInComplexModuleStructure1() throws Exception {
