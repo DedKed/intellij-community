@@ -23,15 +23,16 @@ public class MultiplatformAnalysisTestGenerated extends AbstractMultiplatformAna
         KotlinTestUtils.runTest(this::doTest, this, testDataFilePath);
     }
 
+    // Paritialy moved to HMPP E2E test, need to FIXME
     @TestMetadata("aliasesTypeMismatch")
     public void testAliasesTypeMismatch() throws Exception {
         runTest("testData/multiplatform/aliasesTypeMismatch/");
     }
-
-    @TestMetadata("builtinsAndStdlib")
-    public void testBuiltinsAndStdlib() throws Exception {
-        runTest("testData/multiplatform/builtinsAndStdlib/");
-    }
+    // Move to HMPP E2E test
+    //@TestMetadata("builtinsAndStdlib")
+    //public void testBuiltinsAndStdlib() throws Exception {
+    //    runTest("testData/multiplatform/builtinsAndStdlib/");
+    //}
 
     @TestMetadata("callableReferences")
     public void testCallableReferences() throws Exception {
@@ -43,20 +44,24 @@ public class MultiplatformAnalysisTestGenerated extends AbstractMultiplatformAna
         runTest("testData/multiplatform/chainedTypeAliasRefinement/");
     }
 
-    @TestMetadata("commonSealedWithPlatformInheritor")
-    public void testCommonSealedWithPlatformInheritor() throws Exception {
-        runTest("testData/multiplatform/commonSealedWithPlatformInheritor/");
-    }
+    // Move to HMPP E2E test
+    //@TestMetadata("commonSealedWithPlatformInheritor")
+    //public void testCommonSealedWithPlatformInheritor() throws Exception {
+    //    runTest("testData/multiplatform/commonSealedWithPlatformInheritor/");
+    //}
 
-    @TestMetadata("constructorsOfExpect")
-    public void testConstructorsOfExpect() throws Exception {
-        runTest("testData/multiplatform/constructorsOfExpect/");
-    }
 
-    @TestMetadata("correctOverloadResolutionAmbiguity")
-    public void testCorrectOverloadResolutionAmbiguity() throws Exception {
-        runTest("testData/multiplatform/correctOverloadResolutionAmbiguity/");
-    }
+    // Move to HMPP E2E test
+    //@TestMetadata("constructorsOfExpect")
+    //public void testConstructorsOfExpect() throws Exception {
+    //    runTest("testData/multiplatform/constructorsOfExpect/");
+    //}
+
+    // Move to HMPP E2E test
+    //@TestMetadata("correctOverloadResolutionAmbiguity")
+    //public void testCorrectOverloadResolutionAmbiguity() throws Exception {
+    //    runTest("testData/multiplatform/correctOverloadResolutionAmbiguity/");
+    //}
 
     @TestMetadata("defaultArguments")
     public void testDefaultArguments() throws Exception {
@@ -243,10 +248,11 @@ public class MultiplatformAnalysisTestGenerated extends AbstractMultiplatformAna
         runTest("testData/multiplatform/qualifiedReceiver/");
     }
 
-    @TestMetadata("recursiveTypes")
-    public void testRecursiveTypes() throws Exception {
-        runTest("testData/multiplatform/recursiveTypes/");
-    }
+    //Test moved to HMPP E2E
+    //@TestMetadata("recursiveTypes")
+    //public void testRecursiveTypes() throws Exception {
+    //    runTest("testData/multiplatform/recursiveTypes/");
+    //}
 
     @TestMetadata("sealedInheritorsInComplexModuleStructure1")
     public void testSealedInheritorsInComplexModuleStructure1() throws Exception {
@@ -258,10 +264,12 @@ public class MultiplatformAnalysisTestGenerated extends AbstractMultiplatformAna
         runTest("testData/multiplatform/sealedInheritorsInComplexModuleStructure2/");
     }
 
-    @TestMetadata("simple")
-    public void testSimple() throws Exception {
-        runTest("testData/multiplatform/simple/");
-    }
+
+    //Already checked in MultiModulesHmpp
+    //@TestMetadata("simple")
+    //public void testSimple() throws Exception {
+    //    runTest("testData/multiplatform/simple/");
+    //}
 
     @TestMetadata("smartCastOnPropertyFromDependentModule")
     public void testSmartCastOnPropertyFromDependentModule() throws Exception {
